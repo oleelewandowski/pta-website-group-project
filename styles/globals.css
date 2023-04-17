@@ -34,7 +34,7 @@ body {
 
   margin: 0;
   background-color: var(--color-white);
-  color: #000000;
+  color: var(--color-black);
   font-family: "Roboto", sans-serif;
 }
 
