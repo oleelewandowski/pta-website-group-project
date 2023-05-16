@@ -3,19 +3,27 @@ import styles from "./nav-bar.module.css";
 import Link from "next/link";
 import NavLogo from "./nav-logo";
 import useTranslation from "next-translate/useTranslation";
+import LoginButton from "../auth/login-button";
+import { useSession, signOut } from "next-auth/react";
+import LogoutButton from "../auth/logout-button";
 
 const NavLink = ({ id, text, route }) => {
-  return <li>{<Link href={route}>{text}</Link>}</li>;
+  return <li key={id}>{<Link href={route}>{text}</Link>}</li>;
 };
 
 const NavBar = () => {
+  const { data: session, status } = useSession();
   const { t } = useTranslation("nav-bar");
 
-  const routes = [
-    { id: "route-1", route: "/administration", text: t("administration") },
-    { id: "route-2", route: "/hydroacoustic", text: t("hydroacoustic") },
-    { id: "route-3", route: "/database", text: t("database") },
-    { id: "route-4", route: "/contact", text: t("contact") },
+  const unprotectedRoutes = [
+    { id: "up-route-1", route: "/administration", text: t("administration") },
+    { id: "up-route-2", route: "/hydroacoustic", text: t("hydroacoustic") },
+    { id: "up-route-3", route: "/database", text: t("database") },
+    { id: "up-route-4", route: "/contact", text: t("contact") },
+  ];
+
+  const protectedRoutes = [
+    { id: "p-route-1", route: "/panel", text: t("panel") },
   ];
 
   return (
@@ -26,12 +34,17 @@ const NavBar = () => {
         </Link>
         <nav>
           <ul>
-            {routes.map((props) => (
+            {unprotectedRoutes.map((props) => (
               <NavLink {...props} />
             ))}
+            {session && protectedRoutes.map((props) => <NavLink {...props} />)}
+            {session ? (
+              <LogoutButton signOut={signOut} key="logout-button" t={t} />
+            ) : (
+              <LoginButton key="login-button" t={t} />
+            )}
           </ul>
         </nav>
-        {/* LOGOWANIE / JĘZYKI */}
       </header>
     </Fragment>
   );

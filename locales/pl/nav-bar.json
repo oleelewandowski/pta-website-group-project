@@ -2,5 +2,8 @@
   "administration": "Zarząd",
   "hydroacoustic": "Hydroacoustic Journal",
   "database": "Baza Danych",
-  "contact": "Dane Kontaktowe"
+  "contact": "Dane Kontaktowe",
+  "panel": "Panel",
+  "loginButton": "Zaloguj się",
+  "logoutButton": "Wyloguj się"
 }

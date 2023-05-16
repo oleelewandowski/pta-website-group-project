@@ -4,5 +4,6 @@ module.exports = {
   pages: {
     "*": ["nav-bar"],
     "/": ["home-page"],
+    "/login": ["auth"],
   },
 };
