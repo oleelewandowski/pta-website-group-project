@@ -1,0 +1,5 @@
+.options {
+  display: flex;
+  justify-content: center;
+  gap: var(--size-4);
+}

@@ -5,5 +5,6 @@ module.exports = {
     "*": ["nav-bar"],
     "/": ["home-page"],
     "/login": ["auth"],
+    "/panel": ["panel"],
   },
 };

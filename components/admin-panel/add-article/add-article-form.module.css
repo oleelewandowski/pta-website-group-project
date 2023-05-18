@@ -1,0 +1,97 @@
+.form {
+  width: 95%;
+  max-width: 25rem;
+  margin: 2rem auto;
+}
+
+.control {
+  margin-bottom: 0.5rem;
+}
+
+.control label {
+  font-weight: bold;
+  color: var(--color-black);
+  display: block;
+}
+
+.control p {
+  font-size: 0.6rem;
+  color: var(--color-grey-600);
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.control input {
+  display: block;
+  font: inherit;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--color-grey-600);
+  padding: 0.25rem;
+  background-color: var(--color-white);
+}
+
+.control select {
+  display: block;
+  font: inherit;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--color-grey-600);
+  padding: 0.25rem;
+  background-color: var(--color-white);
+}
+
+.control textarea {
+  resize: none;
+  display: block;
+  font: inherit;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--color-grey-600);
+  padding: 0.25rem;
+  background-color: var(--color-white);
+}
+
+.control input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control input[type="checkbox"]:checked {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.action {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.action button {
+  width: var(--size-40);
+  height: var(--size-12);
+  margin: var(--size-2);
+  border-radius: 4px;
+  background-color: var(--color-grey-600);
+  color: var(--color-white);
+  font-size: var(--size-4);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.action button:hover {
+  background-color: var(--color-grey-400);
+  border-color: var(--color-grey-800);
+}

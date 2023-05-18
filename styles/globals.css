@@ -30,6 +30,10 @@ body {
   --size-12: 3rem;
   --size-16: 4rem;
   --size-20: 5rem;
+  --size-24: 6rem;
+  --size-28: 7rem;
+  --size-32: 8rem;
+  --size-36: 9rem;
   --size-40: 10rem;
 
   margin: 0;
