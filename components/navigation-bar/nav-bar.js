@@ -6,6 +6,7 @@ import useTranslation from "next-translate/useTranslation";
 import LoginButton from "../auth/login-button";
 import { useSession, signOut } from "next-auth/react";
 import LogoutButton from "../auth/logout-button";
+import LanguageSwitcher from "../layout/language/language-switcher";
 
 const NavLink = ({ id, text, route }) => {
   return <li key={id}>{<Link href={route}>{text}</Link>}</li>;
@@ -45,6 +46,7 @@ const NavBar = () => {
             )}
           </ul>
         </nav>
+        <LanguageSwitcher />
       </header>
     </Fragment>
   );
