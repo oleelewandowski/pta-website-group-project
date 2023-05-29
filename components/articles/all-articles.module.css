@@ -1,0 +1,5 @@
+.articles {
+  width: 70%;
+  max-width: 60rem;
+  margin: var(--size-4) auto;
+}

@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+  max-width: 70%;
+}
+
+.container ul {
+  list-style-type: upper-roman;
+  list-style-position: inside;
+}
+
+.container li {
+  font-size: var(--size-3);
+}
+
+.container p {
+  font-size: var(--size-3);
+  line-height: 1.2;
+}

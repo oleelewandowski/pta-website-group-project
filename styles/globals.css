@@ -35,6 +35,11 @@ body {
   --size-32: 8rem;
   --size-36: 9rem;
   --size-40: 10rem;
+  --size-44: 12rem;
+  --size-48: 14rem;
+  --size-52: 16rem;
+  --size-56: 18rem;
+  --size-60: 20rem;
 
   margin: 0;
   background-color: var(--color-white);

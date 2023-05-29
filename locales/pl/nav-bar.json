@@ -1,9 +1,11 @@
 {
+  "languageSwitch": "Language switched successfully!",
   "administration": "Zarząd",
   "hydroacoustic": "Hydroacoustic Journal",
   "database": "Baza Danych",
   "contact": "Dane Kontaktowe",
   "panel": "Panel",
   "loginButton": "Zaloguj się",
-  "logoutButton": "Wyloguj się"
+  "logoutButton": "Wyloguj się",
+  "logoutToast": "Wylogowano pomyślnie!"
 }

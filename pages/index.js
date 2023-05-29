@@ -1,12 +1,15 @@
-import useTranslation from "next-translate/useTranslation";
+import { Fragment } from "react";
+import AllArticles from "@/components/articles/all-articles";
+import HeaderHome from "@/components/home-page/header-home";
 
 const HomePage = () => {
-  const { t } = useTranslation("home-page");
-
   return (
-    <>
-      <main></main>
-    </>
+    <Fragment>
+      <main>
+        <HeaderHome />
+        <AllArticles />
+      </main>
+    </Fragment>
   );
 };
 

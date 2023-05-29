@@ -3,6 +3,11 @@ import styles from "./auth-form.module.css";
 import { signIn } from "next-auth/react";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
+import {
+  pendingToast,
+  successToast,
+  errorToast,
+} from "@/helpers/toast/toaster-utils";
 
 const AuthForm = () => {
   const { t } = useTranslation("auth");
@@ -12,6 +17,8 @@ const AuthForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+
+    const notification = pendingToast(t("pendingToast"));
 
     const enteredEmail = emailInputRef.current.value;
     const enteredPassword = passwordInputRef.current.value;
@@ -29,6 +36,9 @@ const AuthForm = () => {
       email: enteredEmail,
       password: enteredPassword,
     });
+
+    if (result.ok) successToast(notification, t("successToast"));
+    if (!result.ok) errorToast(notification, t("errorToast"));
 
     if (!result.error) {
       router.replace("/");
