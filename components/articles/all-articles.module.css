@@ -3,3 +3,27 @@
   max-width: 60rem;
   margin: var(--size-4) auto;
 }
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner > div {
+  width: var(--size-1);
+  height: var(--size-1);
+  background-color: #333;
+  border-radius: 50%;
+  animation: bouncing-ball-animation 1s infinite ease-in-out;
+}
+
+@keyframes bouncing-ball-animation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}

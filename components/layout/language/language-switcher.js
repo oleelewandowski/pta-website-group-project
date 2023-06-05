@@ -28,7 +28,7 @@ const LanguageSwitcher = () => {
               href={{ pathname, query }}
               as={asPath}
               locale={locale}
-              onClick={() => languageChangedToast(t("languageSwitch"))}
+              onClick={() => languageChangedToast(t("LANGUAGE_SWITCH"))}
             >
               {locale === "en" ? ENFlag : locale === "pl" ? PLFlag : null}
             </Link>

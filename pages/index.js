@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import AllArticles from "@/components/articles/all-articles";
 import HeaderHome from "@/components/home-page/header-home";
+import OurPartners from "@/components/home-page/our-partners";
 
 const HomePage = () => {
   return (
@@ -8,6 +9,7 @@ const HomePage = () => {
       <main>
         <HeaderHome />
         <AllArticles />
+        <OurPartners />
       </main>
     </Fragment>
   );

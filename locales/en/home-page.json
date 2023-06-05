@@ -1,1 +1,12 @@
-{}
+{
+  "introduction": "The Polish Acoustical Society (PTA) is a scientific association of individuals associated with acoustics. The Gdańsk Branch of PTA is one of the seven branches operating in our country. The highest authority of PTA is the Congress of Delegates. The main body implementing the statutory goals of the association and representing PTA externally is the Main Board.",
+  "tasks": {
+    "description": "The most important tasks set for PTA are:",
+    "first": "developing acoustics with consideration of its branches and related fields",
+    "second": "scientific communication with individuals creatively working in the field of acoustics and related interdisciplinary fields",
+    "third": "promoting acoustics with special consideration for fields important to science, culture, society, national economy, and environmental protection",
+    "fourth": "engaging in economic activities"
+  },
+  "members": "Membership in the association is open not only to individuals actively interested in acoustics but also to institutions and workplaces supporting the fight against noise and vibrations, as well as the development of acoustics. All individuals interested in joining PTA are requested to complete a declaration, send it to the PTA secretariat, and pay the membership fee.",
+  "partners": "Organizations cooperating with the Gdańsk Branch of PTA:"
+}

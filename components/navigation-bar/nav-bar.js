@@ -13,7 +13,7 @@ const NavLink = ({ id, text, route }) => {
 };
 
 const NavBar = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const { t } = useTranslation("nav-bar");
 
   const unprotectedRoutes = [

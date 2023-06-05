@@ -1,9 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./article-item.module.css";
+import { useRouter } from "next/router";
 
 const ArticleItem = ({ article }) => {
-  const { title, image, snippet, date, slug } = article;
+  const { translations, image, date, _id } = article;
+  const router = useRouter();
+
+  const { locale: activeLocale } = router;
+  const { title, snippet } = translations[activeLocale];
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
@@ -11,9 +16,9 @@ const ArticleItem = ({ article }) => {
     year: "numeric",
   });
 
-  const imagePath = `/images/articles/${slug}/${image}`;
+  const imagePath = `/images/articles/${image}`;
 
-  const linkPath = `/articles/${slug}`;
+  const linkPath = `/articles/${_id}`;
 
   return (
     <li className={styles.article}>

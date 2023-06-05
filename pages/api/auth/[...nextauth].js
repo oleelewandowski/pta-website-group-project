@@ -2,7 +2,6 @@ import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { connectToDatabase } from "@/helpers/database/database-utils";
 import { comparePassword } from "@/helpers/auth/auth-utils";
-import useTranslation from "next-translate/useTranslation";
 
 export default NextAuth({
   session: {

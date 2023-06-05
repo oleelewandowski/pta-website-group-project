@@ -5,7 +5,7 @@ const ArticlesGrid = ({ articles }) => {
   return (
     <ul className={styles.grid}>
       {articles.map((article) => (
-        <ArticleItem key={article.slug} article={article} />
+        <ArticleItem key={article.id} article={article} />
       ))}
     </ul>
   );

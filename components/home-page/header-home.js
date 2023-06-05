@@ -1,37 +1,27 @@
 import styles from "./header-home.module.css";
-
-const tasks = [
-  "rozwijanie akustyki z uwzględnieniem jej działów i dziedzin pokrewnych",
-  "łączność naukowa z osobami pracującymi twórczo w dziedzinie akustyki i dziedzinach pogranicznych",
-  "popularyzowanie akustyki ze szczególnym uwzględnieniem dziedzin ważnych dla nauki, kultury społeczeństwa, gospodarki narodowej i ochrony środowiska",
-  "prowadzenie działalności gospodarczej",
-];
+import useTranslation from "next-translate/useTranslation";
 
 const HeaderHome = () => {
+  const { t } = useTranslation("home-page");
+
+  const tasks = [
+    t("tasks.first"),
+    t("tasks.second"),
+    t("tasks.third"),
+    t("tasks.fourth"),
+  ];
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <p>
-          Polskie Towarzystwo Akustyczne (PTA) jest stowarzyszeniem naukowym
-          osób związanych z akustyką. Oddział Gdański PTA jest jednym z siedmiu
-          oddziałów działających w naszym kraju. Najwyższą władzą PTA jest Zjazd
-          Delegatów. Naczelnym organem realizującym cele statutowe
-          stowarzyszenia i reprezentującym PTA na zewnątrz jest Zarząd Główny.
-        </p>
-        <p>Najważniejsze zadania stawiane PTA to:</p>
+        <p>{t("introduction")}</p>
+        <p>{t("tasks.description")}</p>
         <ul>
           {tasks.map((task) => (
             <li key={task}>{task}</li>
           ))}
         </ul>
-        <p>
-          Członkiem stowarzyszenia mogą być nie tylko osoby fizyczne czynnie
-          interesujące się zagadnieniami akustyki, ale również instytucje i
-          zakłady pracy wspierające walkę z hałasem i wibracjami oraz rozwój
-          akustyki. Wszystkie osoby zainteresowane przystąpieniem do PTA prosimy
-          o wypełnienie deklaracji, przysłanie jej do sekretariatu PTA oraz
-          opłacenie składki członkowskiej.
-        </p>
+        <p>{t("members")}</p>
       </div>
     </header>
   );

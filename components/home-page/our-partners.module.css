@@ -1,0 +1,29 @@
+.partners {
+  width: 70%;
+  max-width: 60rem;
+  margin: var(--size-12) auto;
+}
+
+.partners p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--size-3);
+}
+
+.partners ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--size-20), 1fr));
+  gap: var(--size-8);
+  align-content: center;
+}
+
+.partners li {
+  padding: var(--size-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
