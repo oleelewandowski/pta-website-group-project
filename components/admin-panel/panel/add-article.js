@@ -7,7 +7,7 @@ import { ADMIN_BUTTON_ICON_SIZE } from "@/constants/component-constants";
 const AddArticle = () => {
   const { t } = useTranslation("panel");
 
-  const href = "/panel/add";
+  const href = "/panel/manage";
   const description = t("add");
   const addIcon = <MdAddCircle size={ADMIN_BUTTON_ICON_SIZE} />;
 

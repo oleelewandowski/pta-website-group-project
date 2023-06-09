@@ -1,0 +1,36 @@
+{
+  "form": {
+    "createTitle": "Create an article",
+    "editTitle": "Edit an article"
+  },
+  "fields": {
+    "title": {
+      "title": "Title",
+      "tooltip": "Enter the article title."
+    },
+    "image": {
+      "title": "Image Path",
+      "tooltip": "Enter the title of the article photo in the local directory (WITH EXTENSION). It is suggested to seperate words with a hyphen: (exmaple-of-image-path.png)."
+    },
+    "description": {
+      "title": "Description",
+      "tooltip": "Enter the detailed description of the article."
+    },
+    "snippet": {
+      "title": "Snippet",
+      "tooltip": "In 2-3 sentences, provide the most important information about the product."
+    },
+    "date": {
+      "title": "Date",
+      "tooltip": "Enter the current date. It could be in format: YYYY-MM-DD / DD-MM-YYYY"
+    },
+    "isFeatured": {
+      "title": "Highlight",
+      "tooltip": "Should the article be featured on the main page?"
+    }
+  },
+  "buttons": {
+    "edit": "Confirm changes",
+    "clear": "Clear the form"
+  }
+}

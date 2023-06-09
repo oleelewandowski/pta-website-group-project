@@ -6,5 +6,6 @@ module.exports = {
     "/": ["home-page"],
     "/login": ["auth"],
     "/panel": ["panel"],
+    "/panel/manage": ["panel-manage"],
   },
 };

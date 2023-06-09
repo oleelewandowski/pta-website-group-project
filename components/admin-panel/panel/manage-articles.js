@@ -7,7 +7,7 @@ import { ADMIN_BUTTON_ICON_SIZE } from "@/constants/component-constants";
 const ManageArticles = () => {
   const { t } = useTranslation("panel");
 
-  const href = "/panel/manage";
+  const href = "/panel/overview";
   const manageIcon = <MdEdit size={ADMIN_BUTTON_ICON_SIZE} />;
   const description = t("manage");
 

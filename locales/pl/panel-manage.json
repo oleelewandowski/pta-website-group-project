@@ -1,0 +1,36 @@
+{
+  "form": {
+    "createTitle": "Utwórz artykuł",
+    "editTitle": "Edytuj artykuł"
+  },
+  "fields": {
+    "title": {
+      "title": "Tytuł",
+      "tooltip": "Wprowadź tytuł artykułu."
+    },
+    "image": {
+      "title": "Ścieżka do zdjęcia",
+      "tooltip": "Wprowadź tytuł zdjęcia artykułu w lokalnym katalogu (Z ROZSZERZENIEM). Sugeruje się oddzielać słowa łącznikiem: (przykład-ścieżki-do-zdjęcia.png)."
+    },
+    "description": {
+      "title": "Opis",
+      "tooltip": "Wprowadź dokładny opis artykułu."
+    },
+    "snippet": {
+      "title": "Fragment",
+      "tooltip": "W 2-3 zdaniach podaj najważniejsze informacje o produkcie."
+    },
+    "date": {
+      "title": "Data",
+      "tooltip": "Wprowadź dzisiejszą datę w dozwolonych formatach: RRRR-MM-DD / DD-MM-RRRR"
+    },
+    "isFeatured": {
+      "title": "Wyróżnienie",
+      "tooltip": "Czy artykuł ma być wyróżniony na głównej stronie?"
+    }
+  },
+  "buttons": {
+    "edit": "Potwierdź zmiany",
+    "clear": "Wyczyść formularz"
+  }
+}

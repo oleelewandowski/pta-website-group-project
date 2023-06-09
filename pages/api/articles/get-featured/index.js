@@ -8,7 +8,7 @@ const handler = async (req, res) => {
 
     const collection = db.collection("articles");
 
-    const data = await collection.find().toArray();
+    const data = await collection.find({ isFeatured: true }).toArray();
 
     if (!data)
       return res

@@ -6,7 +6,29 @@ const handler = async (req, res) => {
 
     const db = client.db();
 
-    console.log(db);
+    const collection = db.collection("articles");
+
+    const data = await collection.find().toArray();
+
+    if (!data)
+      return res
+        .status(422)
+        .json({ message: "No artctiles to fetch...", status: 422 });
+
+    try {
+      res.status(200).json({
+        message: " You've fetched articles... ",
+        status: 200,
+        articles: data,
+      });
+    } catch (error) {
+      res.status(422).json({
+        message: `Fetching failed... ${error}`,
+        status: 422,
+      });
+    }
+
+    client.close();
   }
 };
 
