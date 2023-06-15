@@ -7,7 +7,3 @@
   gap: var(--size-8);
   align-content: center;
 }
-
-.grid > *:first-child {
-  grid-column: span 2;
-}
