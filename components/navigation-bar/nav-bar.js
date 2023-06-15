@@ -7,14 +7,22 @@ import LoginButton from '../auth/login-button';
 import { useSession, signOut } from 'next-auth/react';
 import LogoutButton from '../auth/logout-button';
 import LanguageSwitcher from '../layout/language/language-switcher';
+import { useRouter } from 'next/router';
 
-const NavLink = ({ id, text, route }) => {
-  return <li key={id}>{<Link href={route}>{text}</Link>}</li>;
+const NavLink = ({ id, text, route, active }) => {
+  console.log(route, active);
+
+  return (
+    <li key={id} className={active ? styles.active : ''}>
+      {<Link href={route}>{text}</Link>}
+    </li>
+  );
 };
 
 const NavBar = () => {
   const { data: session } = useSession();
   const { t } = useTranslation('nav-bar');
+  const router = useRouter();
 
   const unprotectedRoutes = [
     { id: 'up-route-0', route: '/', text: t('homePage') },
@@ -33,7 +41,11 @@ const NavBar = () => {
       <nav>
         <ul>
           {unprotectedRoutes.map((props) => (
-            <NavLink key={props.id} {...props} />
+            <NavLink
+              key={props.id}
+              {...props}
+              active={router.pathname === props.route}
+            />
           ))}
           {session && protectedRoutes.map((props) => <NavLink {...props} />)}
           {/* {session ? (

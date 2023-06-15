@@ -28,6 +28,7 @@
   font-weight: bold;
   font-size: 16px;
   position: relative;
+  margin-bottom: 0;
 }
 
 .header a {
@@ -43,7 +44,7 @@
   color: var(--color-primary);
 }
 
-.header li:first-child a::after {
+.header li.active a::after {
   content: '';
   position: absolute;
   bottom: 0;
