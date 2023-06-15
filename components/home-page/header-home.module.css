@@ -20,7 +20,6 @@
   height: 1000px;
   background-color: red;
   pointer-events: none;
-  z-index: -1;
   background: radial-gradient(
     100% 104.79% at 100% 0%,
     rgba(255, 255, 255, 0.02) 0%,
