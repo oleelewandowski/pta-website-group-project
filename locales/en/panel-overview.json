@@ -1,0 +1,11 @@
+{
+  "overview": {
+    "manageArticles": "Manage artciles"
+  },
+  "columns": {
+    "article": "ARTICLE",
+    "snippet": "SNIPPET",
+    "highlight": "MAIN PAGE",
+    "actions": "ACTIONS"
+  }
+}

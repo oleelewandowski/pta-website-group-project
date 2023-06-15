@@ -3,6 +3,7 @@
     "createTitle": "Create an article",
     "editTitle": "Edit an article"
   },
+  "warning": "Please provide information about the article (title, description, snippet) in Polish. It is possible to provide a translation at a later stage of article creation.",
   "fields": {
     "title": {
       "title": "Title",
@@ -27,10 +28,31 @@
     "isFeatured": {
       "title": "Highlight",
       "tooltip": "Should the article be featured on the main page?"
+    },
+    "isTranslated": {
+      "title": "Translation",
+      "tooltip": "Should the article be available in English as well? If yes, select this option and fill in the fields in English. IMPORTANT: If translations are not provided and the user changes the language of the page, they will be informed that the article is only available in Polish."
+    },
+    "titleEN": {
+      "title": "English Title",
+      "tooltip": "Enter the article title in english."
+    },
+    "descriptionEN": {
+      "title": "English Description",
+      "tooltip": "Enter the detailed description of the article in english."
+    },
+    "snippetEN": {
+      "title": "English Snippet",
+      "tooltip": "In 2-3 sentences, provide the most important information about the product in english."
     }
   },
   "buttons": {
     "edit": "Confirm changes",
     "clear": "Clear the form"
+  },
+  "toast": {
+    "pending": "Creating an article...",
+    "success": "Article successfully created",
+    "error": "Error! Article not created"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "overview": {
+    "manageArticles": "Zarządzaj artykułami"
+  },
+  "columns": {
+    "article": "ARTYKUŁ",
+    "snippet": "FRAGMENT",
+    "highlight": "WYRÓŻNIENIE",
+    "actions": "AKCJE"
+  }
+}

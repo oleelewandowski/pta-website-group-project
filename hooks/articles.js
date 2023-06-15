@@ -10,3 +10,15 @@ export const useArticles = (ARTICLE_TYPE) => {
     },
   });
 };
+
+export const useArticle = (articleId) => {
+  return useQuery({
+    queryKey: ["article"],
+    queryFn: async () => {
+      const { data } = await axios.get(
+        `/api/articles/get-article/${articleId}`
+      );
+      return data;
+    },
+  });
+};

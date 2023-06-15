@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/react": "^1.0.0-beta.13",
     "@tanstack/react-query": "^4.29.12",
     "axios": "^1.4.0",
     "mongodb": "^5.1.0",

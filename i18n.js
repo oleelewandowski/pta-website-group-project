@@ -7,5 +7,7 @@ module.exports = {
     "/login": ["auth"],
     "/panel": ["panel"],
     "/panel/manage": ["panel-manage"],
+    "/panel/overview": ["panel-overview"],
+    "/panel/edit/[articleId]": ["panel-manage"],
   },
 };

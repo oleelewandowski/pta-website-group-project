@@ -3,6 +3,7 @@
     "createTitle": "Utwórz artykuł",
     "editTitle": "Edytuj artykuł"
   },
+  "warning": "Prosimy o podanie informacji o artykule (tytuł, opis, fragment) w języku polskim. Istnieje możliwość, aby podać translację w późniejszym etapie tworzenia artykułu.",
   "fields": {
     "title": {
       "title": "Tytuł",
@@ -27,10 +28,31 @@
     "isFeatured": {
       "title": "Wyróżnienie",
       "tooltip": "Czy artykuł ma być wyróżniony na głównej stronie?"
+    },
+    "isTranslated": {
+      "title": "Tłumaczenie",
+      "tooltip": "Czy artykuł ma być dostępny również w języku angielskim? Jeśli tak, zaznacz tę opcję i wypełnij pola w języku angielskim. WAŻNE: Jeżeli tłumaczenia nie zostaną podane, a użytkownik zmieni język strony, zostanie on poinformowany, iż dany artykuł jest dostępny tylko w języku polskim."
+    },
+    "titleEN": {
+      "title": "Tytuł w języku angielskim",
+      "tooltip": "Wprowadź tytuł artykułu w języku angielskim."
+    },
+    "descriptionEN": {
+      "title": "Opis w języku angielskim",
+      "tooltip": "Wprowadź szczegółowy opis artykułu w języku angielskim."
+    },
+    "snippetEN": {
+      "title": "Krótki opis w języku angielskim",
+      "tooltip": "W 2-3 zdaniach podaj najważniejsze informacje o produkcie w języku angielskim."
     }
   },
   "buttons": {
     "edit": "Potwierdź zmiany",
     "clear": "Wyczyść formularz"
+  },
+  "toast": {
+    "pending": "Tworzenie artykułu...",
+    "success": "Artykuł został pomyślnie utworzony",
+    "error": "Błąd! Artykuł nie został utworzony"
   }
 }
