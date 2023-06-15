@@ -1,26 +1,26 @@
 import ManageArticleForm from "@/components/admin-panel/manage-articles-form/manage-article-form";
 import { Fragment } from "react";
-import { useRouter } from "next/router";
 import axios from "axios";
+import { successToast, errorToast } from "@/helpers/toast/toaster-utils";
+import useTranslation from "next-translate/useTranslation";
 
 const AddArticlePage = () => {
-  const router = useRouter();
-  const { locale: activeLocale } = router;
+  const { t } = useTranslation("panel-manage");
 
-  const onCreate = async (article) => {
+  const onCreate = async (article, notification) => {
     try {
       const response = await axios.post("/api/articles/add", {
         article,
-        lang: activeLocale,
       });
+      successToast(notification, t("toast.success"));
     } catch (error) {
-      throw new Error(`Error while creating article... ${error}`);
+      errorToast(notification, t("toast.error"));
     }
   };
 
   return (
     <Fragment>
-      <ManageArticleForm lang={activeLocale} onCreate={onCreate} />
+      <ManageArticleForm onCreate={onCreate} />
     </Fragment>
   );
 };

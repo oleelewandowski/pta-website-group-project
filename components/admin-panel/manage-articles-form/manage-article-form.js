@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { useRef } from "react";
 import useTranslation from "next-translate/useTranslation";
 import styles from "./manage-article-form.module.css";
+import { pendingToast } from "@/helpers/toast/toaster-utils";
 
 const ManageArticleForm = ({ onCreate, onEdit, article }) => {
   const { t } = useTranslation("panel-manage");
   const [isFeatured, setIsFeatured] = useState(false);
+  const [fetchedArticle, setFetchedArticle] = useState({});
+  const [isTranslated, setIsTranslated] = useState(
+    fetchedArticle?.isTranslated || false
+  );
 
   const formRef = useRef();
   const titleRef = useRef();
@@ -14,35 +19,39 @@ const ManageArticleForm = ({ onCreate, onEdit, article }) => {
   const snippetRef = useRef();
   const dateRef = useRef();
   const isFeaturedRef = useRef();
+  const isTranslatedRef = useRef();
+  const titleENRef = useRef();
+  const descriptionENRef = useRef();
+  const snippetENRef = useRef();
 
-  const initialInsert = ({
-    title,
-    description,
-    snippet,
-    image,
-    date,
-    isFeatured,
-  }) => {
-    titleRef.current.value = title;
-    imageRef.current.value = image;
-    descriptionRef.current.value = description;
-    snippetRef.current.value = snippet;
-    dateRef.current.value = date;
-    isFeaturedRef.current.value = isFeatured;
+  const initialInsert = (article) => {
+    titleRef.current.value = article.translations["pl"].title;
+    imageRef.current.value = article.image;
+    descriptionRef.current.value = article.translations["pl"].description;
+    snippetRef.current.value = article.translations["pl"].snippet;
+    dateRef.current.value = article.date;
+    isFeaturedRef.current.checked = isFeatured;
+    isTranslatedRef.current.checked = isTranslated;
   };
 
-  const clearForm = (event) => {
-    event.preventDefault();
-
-    formRef.current.reset();
+  const initialInsertTranslations = (article) => {
+    titleENRef.current.value = article.translations["en"].title;
+    descriptionENRef.current.value = article.translations["en"].description;
+    snippetENRef.current.value = article.translations["en"].snippet;
   };
 
-  const handleCheckbox = (e) => {
+  const handleIsFeaturedCheckbox = (e) => {
     setIsFeatured(e.target.checked);
+  };
+
+  const handleIsTranslatedCheckbox = (e) => {
+    setIsTranslated(e.target.checked);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
+
+    const notification = pendingToast(t("pendingToast"));
 
     const inputTitle = titleRef.current.value;
     const inputImage = imageRef.current.value;
@@ -50,6 +59,10 @@ const ManageArticleForm = ({ onCreate, onEdit, article }) => {
     const inputSnippet = snippetRef.current.value;
     const inputDate = dateRef.current.value;
     const inputIsFeatured = isFeatured;
+    const translationsProvided = isTranslated;
+    const titleEN = isTranslated && titleENRef.current?.value;
+    const descriptionEN = isTranslated && descriptionENRef.current?.value;
+    const snippetEN = isTranslated && snippetENRef.current?.value;
 
     const inputs = {
       title: inputTitle,
@@ -58,25 +71,44 @@ const ManageArticleForm = ({ onCreate, onEdit, article }) => {
       snippet: inputSnippet,
       date: inputDate,
       isFeatured: inputIsFeatured,
+      isTranslated: translationsProvided,
     };
 
+    if (isTranslated) {
+      inputs.translations = {
+        title: titleEN,
+        description: descriptionEN,
+        snippet: snippetEN,
+      };
+    }
+
     if (onCreate) {
-      onCreate(inputs);
+      onCreate(inputs, notification);
       return;
     }
     if (onEdit) {
-      onEdit({ ...inputs, id: article._id });
+      onEdit({ ...inputs, id: article._id }, notification);
       return;
     }
   };
 
   useEffect(() => {
-    article && initialInsert(article);
+    if (article) {
+      setIsTranslated(article.isTranslated);
+      setIsFeatured(article.isFeatured);
+      setFetchedArticle(article);
+      initialInsert(article);
+    }
   }, [article]);
+
+  useEffect(() => {
+    isTranslated && fetchedArticle && initialInsertTranslations(fetchedArticle);
+  }, [isTranslated]);
 
   return (
     <form className={styles.form} onSubmit={onSubmit} ref={formRef}>
       <h1> {onCreate ? t("form.createTitle") : t("form.editTitle")}</h1>
+      <p>{onCreate ? t("warning") : null}</p>
       <div className={styles.control}>
         <label htmlFor="title">{t("fields.title.title")}</label>
         <p> {t("fields.title.tooltip")} </p>
@@ -103,7 +135,7 @@ const ManageArticleForm = ({ onCreate, onEdit, article }) => {
         <p> {t("fields.snippet.tooltip")} </p>
         <textarea
           type="text"
-          id="Snippet"
+          id="snippet"
           ref={snippetRef}
           rows="5"
           spellCheck="true"
@@ -122,14 +154,62 @@ const ManageArticleForm = ({ onCreate, onEdit, article }) => {
           id="isFeatured"
           ref={isFeaturedRef}
           checked={isFeatured}
-          onChange={handleCheckbox}
+          onChange={handleIsFeaturedCheckbox}
         />
       </div>
+      <div className={styles.control}>
+        <label htmlFor="isTranslated">{t("fields.isTranslated.title")}</label>
+        <p> {t("fields.isTranslated.tooltip")} </p>
+        <input
+          type="checkbox"
+          id="isTranslated"
+          ref={isTranslatedRef}
+          checked={isTranslated}
+          onChange={handleIsTranslatedCheckbox}
+        />
+      </div>
+      {isTranslated && (
+        <Fragment>
+          <div className={styles.control}>
+            <label htmlFor="titleEN">{t("fields.titleEN.title")}</label>
+            <p> {t("fields.titleEN.tooltip")} </p>
+            <input
+              type="text"
+              id="titleEN"
+              ref={titleENRef}
+              spellCheck="true"
+            />
+          </div>
+          <div className={styles.control}>
+            <label htmlFor="descriptionEN">
+              {t("fields.descriptionEN.title")}
+            </label>
+            <p> {t("fields.descriptionEN.tooltip")} </p>
+            <textarea
+              type="text"
+              id="descriptionEN"
+              ref={descriptionENRef}
+              rows="8"
+              spellCheck="true"
+            />
+          </div>
+          <div className={styles.control}>
+            <label htmlFor="snippetEN">{t("fields.snippetEN.title")}</label>
+            <p> {t("fields.snippetEN.tooltip")} </p>
+            <textarea
+              type="text"
+              id="snippetEN"
+              ref={snippetENRef}
+              rows="5"
+              spellCheck="true"
+            />
+          </div>
+        </Fragment>
+      )}
       <div className={styles.action}>
         <button>
           {onCreate ? t("form.createTitle") : t("form.editTitle")}
         </button>
-        <button onClick={clearForm}>{t("buttons.clear")}</button>
       </div>
     </form>
   );
