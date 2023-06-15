@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:ital@0;1&display=swap');
 
 * {
   box-sizing: border-box;
@@ -20,6 +20,11 @@ body {
 
   --color-success-500: hsl(135, 100%, 40%);
   --color-error-500: hsl(0, 100%, 45%);
+
+  --color-gray-light: #ebe8e8;
+  --color-gray-medium: #88889d;
+  --color-gray-dark: #302f38;
+  --color-primary: #104d85;
 
   --size-1: 0.25rem;
   --size-2: 0.5rem;
@@ -43,16 +48,19 @@ body {
   --size-56: 18rem;
   --size-60: 20rem;
 
+  --page-size: 60rem;
+  --page-size-wide: 80rem;
+
   margin: 0;
   background-color: var(--color-white);
-  color: var(--color-black);
-  font-family: "Roboto", sans-serif;
+  color: var(--color-gray-dark);
+  font-family: 'Roboto', sans-serif;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Oswald", "Roboto", sans-serif;
+  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
 }
 
 a {

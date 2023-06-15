@@ -1,15 +1,15 @@
-import { Fragment } from "react";
-import AllArticles from "@/components/articles/all-articles";
-import HeaderHome from "@/components/home-page/header-home";
-import OurPartners from "@/components/home-page/our-partners";
+import { Fragment } from 'react';
+import AllArticles from '@/components/articles/all-articles';
+import HeaderHome from '@/components/home-page/header-home';
+import OurPartners from '@/components/home-page/our-partners';
 
 const HomePage = () => {
   return (
     <Fragment>
       <main>
         <HeaderHome />
-        <AllArticles />
         <OurPartners />
+        <AllArticles />
       </main>
     </Fragment>
   );

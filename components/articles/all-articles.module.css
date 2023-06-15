@@ -1,7 +1,16 @@
 .articles {
-  width: 70%;
-  max-width: 60rem;
-  margin: var(--size-4) auto;
+  padding: var(--size-4);
+}
+
+.wrapper {
+  max-width: var(--page-size);
+  margin: var(--size-24) auto;
+}
+
+.articles h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: var(--size-8);
 }
 
 .spinner {

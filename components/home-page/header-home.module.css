@@ -1,14 +1,10 @@
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-  font-family: Arial, sans-serif;
+  padding-inline: var(--size-4);
 }
 
 .container {
-  text-align: center;
-  max-width: 70%;
+  max-width: var(--page-size);
+  margin-inline: auto;
 }
 
 .container ul {
@@ -16,11 +12,63 @@
   list-style-position: inside;
 }
 
-.container li {
-  font-size: var(--size-3);
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1000px;
+  height: 1000px;
+  background-color: red;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+    100% 104.79% at 100% 0%,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.0189583) 6.77%,
+    rgba(16, 77, 133, 0.02) 6.78%,
+    rgba(16, 77, 133, 0.02) 14.58%,
+    rgba(255, 255, 255, 0.0189583) 14.59%,
+    rgba(255, 255, 255, 0.0189583) 25%,
+    rgba(16, 77, 133, 0.02) 25.01%,
+    rgba(16, 77, 133, 0.02) 35.94%,
+    rgba(255, 255, 255, 0.0189583) 35.95%,
+    rgba(255, 255, 255, 0.0189583) 44.79%,
+    rgba(16, 77, 133, 0.02) 44.8%,
+    rgba(16, 77, 133, 0.02) 55.21%,
+    rgba(255, 255, 255, 0.0189583) 55.22%,
+    rgba(255, 255, 255, 0.0189583) 64.58%,
+    rgba(255, 255, 255, 0.0189583) 64.59%
+  );
 }
 
-.container p {
-  font-size: var(--size-3);
-  line-height: 1.2;
+.logo {
+  display: flex;
+  gap: clamp(var(--size-4), 5vw, var(--size-8));
+  align-items: center;
+  margin-block: var(--size-24);
+}
+
+.logo img {
+  position: relative;
+  top: 5px;
+}
+
+.logo h1 {
+  text-transform: uppercase;
+  font-size: clamp(24px, 5vw, 36px);
+  margin: 0;
+}
+
+.logo h2 {
+  text-transform: uppercase;
+  font-size: clamp(18px, 5vw, 32px);
+  font-weight: normal;
+  color: var(--color-gray-medium);
+  margin: 0;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: var(--size-24);
 }
