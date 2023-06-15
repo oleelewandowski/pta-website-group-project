@@ -54,4 +54,5 @@
 .content p {
   color: var(--color-gray-medium);
   font-size: 16px;
+  line-height: 1.5;
 }
