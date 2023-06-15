@@ -43,6 +43,7 @@
   padding: var(--size-4);
   background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
   color: white;
+  line-height: 1;
 }
 
 .content time {
