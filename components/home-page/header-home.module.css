@@ -56,6 +56,7 @@
   text-transform: uppercase;
   font-size: clamp(24px, 5vw, 36px);
   margin: 0;
+  line-height: 1;
 }
 
 .logo h2 {

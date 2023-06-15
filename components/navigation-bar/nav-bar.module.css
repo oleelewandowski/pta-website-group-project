@@ -37,6 +37,7 @@
   color: var(--color-black);
   padding: 20px;
   transition: all 0.2s;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 .header a:hover {
