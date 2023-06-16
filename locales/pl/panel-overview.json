@@ -7,5 +7,9 @@
     "snippet": "FRAGMENT",
     "highlight": "WYRÓŻNIENIE",
     "actions": "AKCJE"
+  },
+  "toast": {
+    "success": "Pomyślnie edytowano atykuł",
+    "error": "Błąd! Artykuł nie uległ zmianie"
   }
 }

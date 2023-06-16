@@ -7,5 +7,9 @@
     "snippet": "SNIPPET",
     "highlight": "MAIN PAGE",
     "actions": "ACTIONS"
+  },
+  "toast": {
+    "success": "Article successfully edited",
+    "error": "Error! Article not edited"
   }
 }

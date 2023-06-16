@@ -51,7 +51,7 @@
     "clear": "Wyczyść formularz"
   },
   "toast": {
-    "pending": "Tworzenie artykułu...",
+    "pending": "Żądanie w toku...",
     "success": "Artykuł został pomyślnie utworzony",
     "error": "Błąd! Artykuł nie został utworzony"
   }

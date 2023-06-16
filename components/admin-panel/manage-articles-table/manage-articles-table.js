@@ -9,6 +9,7 @@ import { StyledBadge } from "@/components/ui/table/styled-badge";
 import { IconButton } from "@/components/ui/table/icon-button";
 import { EditIcon } from "@/components/ui/table/edit-icon";
 import { DeleteIcon } from "@/components/ui/table/delete-icon";
+import Loader from "@/helpers/loaders/basic-loader";
 
 const OverviewArticlesTable = ({ onEdit, onDelete }) => {
   const { t } = useTranslation("panel-overview");
@@ -93,8 +94,7 @@ const OverviewArticlesTable = ({ onEdit, onDelete }) => {
     }
   };
 
-  // LOADER HERE
-  if (isLoading) return <div> LOADING... </div>;
+  if (isLoading) return <Loader />;
 
   if (isFetched) {
     return (

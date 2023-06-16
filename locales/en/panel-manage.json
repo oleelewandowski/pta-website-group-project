@@ -51,7 +51,7 @@
     "clear": "Clear the form"
   },
   "toast": {
-    "pending": "Creating an article...",
+    "pending": "Request pending...",
     "success": "Article successfully created",
     "error": "Error! Article not created"
   }

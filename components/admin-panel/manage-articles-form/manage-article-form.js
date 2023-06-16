@@ -51,7 +51,7 @@ const ManageArticleForm = ({ onCreate, onEdit, article }) => {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    const notification = pendingToast(t("pendingToast"));
+    const notification = pendingToast(t("toast.pending"));
 
     const inputTitle = titleRef.current.value;
     const inputImage = imageRef.current.value;
@@ -87,7 +87,7 @@ const ManageArticleForm = ({ onCreate, onEdit, article }) => {
       return;
     }
     if (onEdit) {
-      onEdit({ ...inputs, id: article._id }, notification);
+      onEdit({ ...inputs, _id: article._id }, notification);
       return;
     }
   };
@@ -102,7 +102,10 @@ const ManageArticleForm = ({ onCreate, onEdit, article }) => {
   }, [article]);
 
   useEffect(() => {
-    isTranslated && fetchedArticle && initialInsertTranslations(fetchedArticle);
+    isTranslated &&
+      onEdit &&
+      fetchedArticle &&
+      initialInsertTranslations(fetchedArticle);
   }, [isTranslated]);
 
   return (

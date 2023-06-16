@@ -3,9 +3,11 @@ import { Fragment } from "react";
 import axios from "axios";
 import { successToast, errorToast } from "@/helpers/toast/toaster-utils";
 import useTranslation from "next-translate/useTranslation";
+import { useRouter } from "next/router";
 
 const AddArticlePage = () => {
   const { t } = useTranslation("panel-manage");
+  const router = useRouter();
 
   const onCreate = async (article, notification) => {
     try {
@@ -13,6 +15,7 @@ const AddArticlePage = () => {
         article,
       });
       successToast(notification, t("toast.success"));
+      router.replace("/panel/overview");
     } catch (error) {
       errorToast(notification, t("toast.error"));
     }

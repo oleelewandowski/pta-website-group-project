@@ -8,6 +8,6 @@ module.exports = {
     "/panel": ["panel"],
     "/panel/manage": ["panel-manage"],
     "/panel/overview": ["panel-overview"],
-    "/panel/edit/[articleId]": ["panel-manage"],
+    "/panel/edit/[articleId]": ["panel-manage", "panel-overview"],
   },
 };
