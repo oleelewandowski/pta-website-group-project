@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(var(--size-40), 1fr));
-  gap: var(--size-8);
+  grid-template-columns: repeat(auto-fill, minmax(var(--size-48), 1fr));
+  gap: var(--size-6);
   align-content: center;
 }

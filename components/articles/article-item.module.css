@@ -1,26 +1,24 @@
 .article {
-  box-shadow: 0 var(--size-1) var(--size-4) var(--color-grey-800);
-  background-color: var(--color-grey-600);
   display: flex;
   flex-direction: column;
-  border-radius: var(--size-2);
-  overflow: hidden;
-  width: var(--size-44); /* Adjust the width as desired */
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: var(--size-1);
+  border: 1px solid var(--color-gray-light);
 }
 
 .article:hover {
-  box-shadow: 0 var(--size-1) var(--size-5) var(--color-grey-900);
-  cursor: pointer;
+  background-color: var(--color-gray-light);
 }
 
 .article a {
-  color: var(--color-grey-100);
+  color: var(--color-gray-dark);
   text-decoration: none;
 }
 
 .image {
   position: relative;
-  height: var(--size-28); /* Adjust the height as desired */
+  height: var(--size-44); /* Adjust the height as desired */
   overflow: hidden;
 }
 
@@ -28,25 +26,34 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: var(--size-1);
 }
 
 .content {
   padding: var(--size-3); /* Adjust the padding as desired */
 }
 
-.content h3 {
-  margin: var(--size-2) 0; /* Adjust the margin as desired */
-  font-size: var(--size-4); /* Adjust the font size as desired */
+.image h3 {
+  margin: 0;
+  font-size: 24px; /* Adjust the font size as desired */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--size-4);
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  line-height: 1;
 }
 
 .content time {
   font-style: italic;
-  color: var(--color-grey-300);
-  font-size: var(--size-3); /* Adjust the font size as desired */
+  color: var(--color-gray-medium);
+  font-size: 16px; /* Adjust the font size as desired */
 }
 
 .content p {
-  line-height: 1.2;
-  margin-bottom: var(--size-1); /* Adjust the margin as desired */
-  font-size: var(--size-2);
+  color: var(--color-gray-medium);
+  font-size: 16px;
+  line-height: 1.5;
 }

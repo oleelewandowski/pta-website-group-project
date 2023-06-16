@@ -1,9 +1,10 @@
 {
   "LANGUAGE_SWITCH": "Language switched successfully!",
+  "homePage": "Strona Główna",
   "administration": "Zarząd",
   "hydroacoustic": "Hydroacoustic Journal",
   "database": "Baza Danych",
-  "contact": "Dane Kontaktowe",
+  "contact": "Kontakt",
   "panel": "Panel",
   "loginButton": "Zaloguj się",
   "logoutButton": "Wyloguj się",

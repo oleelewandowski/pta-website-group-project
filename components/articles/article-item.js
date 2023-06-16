@@ -1,7 +1,7 @@
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./article-item.module.css";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import Image from 'next/image';
+import styles from './article-item.module.css';
+import { useRouter } from 'next/router';
 
 const ArticleItem = ({ article }) => {
   const { translations, image, date, _id } = article;
@@ -10,10 +10,10 @@ const ArticleItem = ({ article }) => {
   const { locale: activeLocale } = router;
   const { title, snippet } = translations[activeLocale];
 
-  const formattedDate = new Date(date).toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
+  const formattedDate = new Date(date).toLocaleDateString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
   });
 
   const imagePath = `/images/articles/${image}`;
@@ -25,9 +25,9 @@ const ArticleItem = ({ article }) => {
       <Link href={linkPath}>
         <div className={styles.image}>
           <Image src={imagePath} alt={title} fill />
+          <h3> {title} </h3>
         </div>
         <div className={styles.content}>
-          <h3> {title} </h3>
           <time> {formattedDate} </time>
           <p> {snippet} </p>
         </div>

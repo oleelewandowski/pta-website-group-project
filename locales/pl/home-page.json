@@ -1,4 +1,6 @@
 {
+  "title": "Polskie Towarzystwo Akustyczne",
+  "subtitle": "Oddział Gdański",
   "introduction": "Polskie Towarzystwo Akustyczne (PTA) jest stowarzyszeniem naukowym osób związanych z akustyką. Oddział Gdański PTA jest jednym z siedmiu oddziałów działających w naszym kraju. Najwyższą władzą PTA jest Zjazd Delegatów. Naczelnym organem realizującym cele statutowe stowarzyszenia i reprezentującym PTA na zewnątrz jest Zarząd Główny.",
   "tasks": {
     "description": "Najważniejsze zadania stawiane PTA to:",
@@ -8,5 +10,6 @@
     "fourth": "prowadzenie działalności gospodarczej"
   },
   "members": "Członkiem stowarzyszenia mogą być nie tylko osoby fizyczne czynnie interesujące się zagadnieniami akustyki, ale również instytucje i zakłady pracy wspierające walkę z hałasem i wibracjami oraz rozwój akustyki. Wszystkie osoby zainteresowane przystąpieniem do PTA prosimy o wypełnienie deklaracji, przysłanie jej do sekretariatu PTA oraz opłacenie składki członkowskiej.",
-  "partners": "Organizacje współpracujące z Gdańskim Oddziałem PTA:"
+  "partners": "Organizacje współpracujące",
+  "articles": "Najnowsze artykuły"
 }
