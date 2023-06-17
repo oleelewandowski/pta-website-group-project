@@ -5,7 +5,7 @@ import { useArticle } from "@/hooks/articles";
 import axios from "axios";
 import { errorToast, successToast } from "@/helpers/toast/toaster-utils";
 import useTranslation from "next-translate/useTranslation";
-import Loader from "@/helpers/loaders/basic-loader";
+import Loader from "@/components/ui/loaders/basic-loader";
 
 const EditArticlePage = () => {
   const router = useRouter();

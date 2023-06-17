@@ -11,5 +11,20 @@
   "toast": {
     "success": "Article successfully edited",
     "error": "Error! Article not edited"
+  },
+  "deleteModal": {
+    "confirmation": "Are you absolutely certain that you want to delete the article titled:",
+    "warning": {
+      "note": " IMPORTANT: Please note that the change is",
+      "irreversible": "irreversible"
+    },
+    "buttons": {
+      "close": "Close",
+      "confirm": "Confirm"
+    }
+  },
+  "tooltip": {
+    "edit": "Edit article",
+    "delete": "Delete article"
   }
 }

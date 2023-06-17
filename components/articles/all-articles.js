@@ -2,9 +2,9 @@ import ArticlesGrid from "./articles-grid";
 import styles from "./all-articles.module.css";
 import { useArticles } from "@/hooks/articles";
 import useTranslation from "next-translate/useTranslation";
-import ErrorHandler from "../../helpers/error-handlers/error-occured";
+import ErrorHandler from "../ui/error-handlers/error-occured";
 import { ARTCILE_TYPE_FEATURED } from "@/constants/api-constants";
-import Loader from "@/helpers/loaders/basic-loader";
+import Loader from "@/components/ui/loaders/basic-loader";
 
 const AllArticles = () => {
   const { data, isLoading, error } = useArticles(ARTCILE_TYPE_FEATURED);

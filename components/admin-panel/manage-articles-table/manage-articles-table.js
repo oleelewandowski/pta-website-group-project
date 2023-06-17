@@ -9,7 +9,7 @@ import { StyledBadge } from "@/components/ui/table/styled-badge";
 import { IconButton } from "@/components/ui/table/icon-button";
 import { EditIcon } from "@/components/ui/table/edit-icon";
 import { DeleteIcon } from "@/components/ui/table/delete-icon";
-import Loader from "@/helpers/loaders/basic-loader";
+import Loader from "@/components/ui/loaders/basic-loader";
 
 const OverviewArticlesTable = ({ onEdit, onDelete }) => {
   const { t } = useTranslation("panel-overview");
@@ -70,7 +70,7 @@ const OverviewArticlesTable = ({ onEdit, onDelete }) => {
         return (
           <Row justify="center" align="center">
             <Col css={{ d: "flex" }}>
-              <Tooltip content="Edit article">
+              <Tooltip content={t("tooltip.edit")}>
                 <IconButton onClick={() => onEdit(router, article._id)}>
                   <EditIcon size={20} fill="#979797" />
                 </IconButton>
@@ -78,9 +78,9 @@ const OverviewArticlesTable = ({ onEdit, onDelete }) => {
             </Col>
             <Col css={{ d: "flex" }}>
               <Tooltip
-                content="Delete article"
+                content={t("tooltip.delete")}
                 color="error"
-                onClick={() => onDelete(router, article._id)}
+                onClick={() => onDelete(article)}
               >
                 <IconButton>
                   <DeleteIcon size={20} fill="#FF0080" />

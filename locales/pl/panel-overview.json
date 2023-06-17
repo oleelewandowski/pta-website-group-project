@@ -11,5 +11,20 @@
   "toast": {
     "success": "Pomyślnie edytowano atykuł",
     "error": "Błąd! Artykuł nie uległ zmianie"
+  },
+  "deleteModal": {
+    "confirmation": "Czy na pewno chcesz usunąć artykuł o tytule:",
+    "warning": {
+      "note": "WAŻNE: Wprowadzone zmiany są",
+      "irreversible": "nieodwracalne"
+    },
+    "buttons": {
+      "close": "Zamknij",
+      "confirm": "Potwierdź"
+    }
+  },
+  "tooltip": {
+    "edit": "Edytuj artykuł",
+    "delete": "Usuń artykuł"
   }
 }
