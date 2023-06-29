@@ -52,6 +52,15 @@ export const languageChangedToast = (message) => {
   return toast.warn(message, settings);
 };
 
+export const articleDeletedToast = (message) => {
+  const settings = {
+    ...TOAST_CONFIG,
+    hideProgressBar: true,
+    autoClose: WARNING_AUTO_CLOSE_MS,
+  };
+  return toast.warn(message, settings);
+};
+
 export const logoutToast = (message) => {
   const settings = {
     ...TOAST_CONFIG,

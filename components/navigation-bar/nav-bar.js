@@ -29,7 +29,7 @@ const NavBar = () => {
   ];
 
   const protectedRoutes = [
-    { id: "p-route-1", route: "/panel", text: t("panel") },
+    { id: "p-route-1", route: "/panel/overview", text: t("panel") },
   ];
 
   return (

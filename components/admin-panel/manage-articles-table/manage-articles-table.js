@@ -10,12 +10,14 @@ import { IconButton } from "@/components/ui/table/icon-button";
 import { EditIcon } from "@/components/ui/table/edit-icon";
 import { DeleteIcon } from "@/components/ui/table/delete-icon";
 import Loader from "@/components/ui/loaders/basic-loader";
+import AddArticle from "../panel/add-article";
 
 const OverviewArticlesTable = ({ onEdit, onDelete }) => {
   const { t } = useTranslation("panel-overview");
   const router = useRouter();
   const { locale } = router;
-  const { data, isLoading, isFetched } = useArticles(ARTCILE_TYPE_ALL);
+  const { data, isLoading, isFetched, refetch, isRefetching } =
+    useArticles(ARTCILE_TYPE_ALL);
 
   const columns = [
     { name: t("columns.article"), uid: "article" },
@@ -71,7 +73,7 @@ const OverviewArticlesTable = ({ onEdit, onDelete }) => {
           <Row justify="center" align="center">
             <Col css={{ d: "flex" }}>
               <Tooltip content={t("tooltip.edit")}>
-                <IconButton onClick={() => onEdit(router, article._id)}>
+                <IconButton onClick={() => onEdit(article._id)}>
                   <EditIcon size={20} fill="#979797" />
                 </IconButton>
               </Tooltip>
@@ -80,7 +82,7 @@ const OverviewArticlesTable = ({ onEdit, onDelete }) => {
               <Tooltip
                 content={t("tooltip.delete")}
                 color="error"
-                onClick={() => onDelete(article)}
+                onClick={() => onDelete(article, isRefetching, refetch)}
               >
                 <IconButton>
                   <DeleteIcon size={20} fill="#FF0080" />
@@ -134,6 +136,9 @@ const OverviewArticlesTable = ({ onEdit, onDelete }) => {
             rowsPerPage={5}
           />
         </Table>
+        <div className={styles.add}>
+          <AddArticle />
+        </div>
       </div>
     );
   }
